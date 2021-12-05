@@ -4,6 +4,7 @@ import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import Product from '../Product/Product';
+import { Link } from 'react-router-dom';
 import './Products.css'
 
 const Products = () => {
@@ -31,7 +32,7 @@ const Products = () => {
                         justifyContent: 'center'
                     }}>
                         <Typography component="div">
-                            <Button style={{ color: 'black' }} sx={{ fontSize: 'h6.fontSize', fontWeight: 'bold' }} variant="text">Explore More</Button>
+                            <Link style={{ textDecoration: 'none' }} to='/explore'> <Button style={{ color: 'black' }} sx={{ fontSize: 'h6.fontSize', fontWeight: 'bold' }} variant="text">Explore More</Button></Link>
                         </Typography>
                     </Box>
                 </div>
