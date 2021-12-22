@@ -12,7 +12,7 @@ const Products = () => {
     useEffect(() => {
         fetch('https://evening-island-27885.herokuapp.com/productsCollection')
             .then(res => res.json())
-            .then(data => setProducts(data.slice(0, 6)))
+            .then(data => setProducts(data.slice(0, 8)))
     }, []);
 
 
@@ -21,7 +21,7 @@ const Products = () => {
             <div className='mt-5 mb-5' id='products'>
                 <h2 className='text-center'>Add a little joy to your cart.</h2>
                 <div className='container mt-5'>
-                    <Row xs={1} md={2} lg={3} className="g-4">
+                    <Row xs={1} md={2} lg={4} className="g-4">
                         {
                             products.map(product => <Product key={product._id} product={product}></Product>)
                         }
