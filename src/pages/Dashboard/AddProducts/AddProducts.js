@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 const AddProducts = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        fetch('https://evening-island-27885.herokuapp.com/productsCollection', {
+        fetch('https://motivo-store-server.vercel.app/productsCollection', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

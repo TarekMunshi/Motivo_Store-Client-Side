@@ -4,7 +4,7 @@ import Rating from 'react-rating';
 const Review = () => {
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('https://evening-island-27885.herokuapp.com/usersReviews')
+        fetch('https://motivo-store-server.vercel.app/usersReviews')
             .then(res => res.json())
             .then(data => setReviews(data))
 
@@ -42,3 +42,4 @@ const Review = () => {
 };
 
 export default Review;
+

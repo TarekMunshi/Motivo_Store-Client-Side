@@ -14,14 +14,14 @@ import { CircularProgress } from '@mui/material';
 const ManageProducts = () => {
     const [orders, setOrders] = useState([])
     useEffect(() => {
-        const url = `https://evening-island-27885.herokuapp.com/productsCollection`
+        const url = `https://motivo-store-server.vercel.app/productsCollection`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
 
     const orderCancelHandler = id => {
-        const url = `https://evening-island-27885.herokuapp.com/productsCollection/${id}`
+        const url = `https://motivo-store-server.vercel.app/productsCollection/${id}`
         fetch(url, {
             method: "DELETE"
         })

@@ -57,7 +57,7 @@ const BuyModal = ({ open, handleClose, product }) => {
             price: price
         }
 
-        fetch('https://evening-island-27885.herokuapp.com/ordersCollection', {
+        fetch('https://motivo-store-server.vercel.app/ordersCollection', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

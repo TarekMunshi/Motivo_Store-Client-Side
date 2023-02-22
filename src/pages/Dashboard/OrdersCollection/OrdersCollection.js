@@ -13,9 +13,8 @@ import Box from '@mui/material/Box';
 const OrdersCollection = () => {
     const { user } = useAuth()
     const [orders, setOrders] = useState([])
-    console.log(orders)
     useEffect(() => {
-        const url = `https://evening-island-27885.herokuapp.com/ordersCollection?email=${user.email}`
+        const url = `https://motivo-store-server.vercel.app/ordersCollection?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))
@@ -24,7 +23,7 @@ const OrdersCollection = () => {
     const orderCancelHandler = id => {
         const proceed = window.confirm('Are You Sure Want to Cancel Your Order?');
         if (proceed) {
-            const url = `https://evening-island-27885.herokuapp.com/ordersCollection/${id}`
+            const url = `https://motivo-store-server.vercel.app/ordersCollection/${id}`
             fetch(url, {
                 method: "DELETE"
             })

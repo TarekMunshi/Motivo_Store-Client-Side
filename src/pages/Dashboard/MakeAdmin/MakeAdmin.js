@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 const MakeAdmin = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = user => {
-        fetch('https://evening-island-27885.herokuapp.com/users/admin', {
+        fetch('https://motivo-store-server.vercel.app/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

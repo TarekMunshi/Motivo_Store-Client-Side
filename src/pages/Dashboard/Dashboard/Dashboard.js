@@ -31,7 +31,7 @@ import Review from '../Review/Review';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddProducts from '../AddProducts/AddProducts';
 import ManageProducts from '../ManageProducts/ManageProducts';
-
+import './Dashboard.css'
 
 
 const drawerWidth = 240;
@@ -69,15 +69,15 @@ const Dashboard = (props) => {
                             <MenuIcon />
                         </IconButton>
                         <Box>
-                            <Typography variant="h6" noWrap component="div">
+                            <Typography variant="h6" sx={{ color: 'black' }} noWrap component="div">
                                 Dashboard
                             </Typography>
-                            <Typography variant="subtitle2" noWrap component="div">
+                            <Typography sx={{ color: 'black' }} variant="subtitle2" noWrap component="div">
                                 Welcome, {user.displayName}
                             </Typography>
                         </Box>
                         <Box>
-                            <Link style={{ textDecoration: 'none', color: 'white' }} to='/home'> <Button color="inherit">Back To Home</Button></Link>
+                            <Link style={{ textDecoration: 'none', color: 'black' }} to='/home'> <Button color="inherit">Back To Home</Button></Link>
                         </Box>
                     </Toolbar>
                 </AppBar>

@@ -6,7 +6,7 @@ const Review = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch('https://evening-island-27885.herokuapp.com/usersReviews', {
+        fetch('https://motivo-store-server.vercel.app/usersReviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

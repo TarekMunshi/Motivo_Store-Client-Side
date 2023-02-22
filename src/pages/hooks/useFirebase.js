@@ -9,7 +9,6 @@ const useFirebase = () => {
     const [authError, setAuthError] = useState('');
     const [admin, setAdmin] = useState(false)
     const [isApproved, setIsApproved] = useState('')
-    console.log(isApproved)
     const auth = getAuth();
 
     const registerUser = (email, password, name, history) => {
@@ -56,7 +55,7 @@ const useFirebase = () => {
             setIsLoading(false);
         });
         return () => unsubscribed;
-    }, [])
+    }, [auth])
 
     const logout = () => {
         setIsLoading(true);
@@ -69,7 +68,7 @@ const useFirebase = () => {
     }
     const saveUser = (email, displayName) => {
         const user = { email, displayName }
-        fetch('https://evening-island-27885.herokuapp.com/users', {
+        fetch('https://motivo-store-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -78,12 +77,12 @@ const useFirebase = () => {
         })
     }
     useEffect(() => {
-        fetch(`https://evening-island-27885.herokuapp.com/users/${user.email}`)
+        fetch(`https://motivo-store-server.vercel.app/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
     useEffect(() => {
-        fetch(`https://evening-island-27885.herokuapp.com/allOrdersCollection`)
+        fetch(`https://motivo-store-server.vercel.app/allOrdersCollection`)
             .then(res => res.json())
             .then(data => {
                 const status = data.map(s => s.status)

@@ -9,7 +9,7 @@ import Header from '../Shared/Header/Header';
 const Explore = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('https://evening-island-27885.herokuapp.com/productsCollection')
+        fetch('https://motivo-store-server.vercel.app/productsCollection')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])

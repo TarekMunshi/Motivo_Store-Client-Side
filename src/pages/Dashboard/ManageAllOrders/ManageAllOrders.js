@@ -14,7 +14,7 @@ import useAuth from '../../hooks/useAuth';
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([])
     const action = (id) => {
-        const url = `https://evening-island-27885.herokuapp.com/ordersCollection/${id}`
+        const url = `https://motivo-store-server.vercel.app/ordersCollection/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -30,14 +30,14 @@ const ManageAllOrders = () => {
     }
 
     useEffect(() => {
-        const url = `https://evening-island-27885.herokuapp.com/allOrdersCollection`
+        const url = `https://motivo-store-server.vercel.app/allOrdersCollection`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [orders])
 
     const orderCancelHandler = id => {
-        const url = `https://evening-island-27885.herokuapp.com/ordersCollection/${id}`
+        const url = `https://motivo-store-server.vercel.app/ordersCollection/${id}`
         fetch(url, {
             method: "DELETE"
         })
